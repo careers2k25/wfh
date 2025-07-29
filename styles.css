@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #4a5fc1 0%, #3b4ba8 100%);
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+
+/* Header Text */
+.header-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-text p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+}
+
+/* Work from Home Card */
+.work-from-home-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+}
+
+.home-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.card-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.card-header p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
+/* Form Container */
+form {
+    padding: 30px;
+    color: #333;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background: #f9fafb;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: white;
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+/* Date Input Wrapper */
+.date-input-wrapper {
+    position: relative;
+}
+
+.date-input-wrapper input[type="date"] {
+    padding-right: 50px;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #6b7280;
+    pointer-events: none;
+}
+
+/* Form Buttons */
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.cancel-btn, .submit-btn {
+    flex: 1;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cancel-btn {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.cancel-btn:hover {
+    background: #e5e7eb;
+    transform: translateY(-1px);
+}
+
+.submit-btn {
+    background: #10b981;
+    color: white;
+}
+
+.submit-btn:hover {
+    background: #059669;
+    transform: translateY(-1px);
+}
+
+/* Success Message */
+.success-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    padding: 20px;
+}
+
+.success-message.active {
+    display: flex;
+}
+
+.success-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    color: #333;
+    max-width: 300px;
+    width: 100%;
+}
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    color: white;
+}
+
+.success-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.success-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.close-text {
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+    
+    .card-header {
+        padding: 30px 20px;
+    }
+    
+    .card-header h1 {
+        font-size: 24px;
+    }
+    
+    .home-icon {
+        font-size: 40px;
+    }
+    
+    form {
+        padding: 25px 20px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .cancel-btn, .submit-btn {
+        width: 100%;
+    }
+    
+    .success-content {
+        padding: 30px 25px;
+        max-width: 280px;
+    }
+}

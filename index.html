@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work from Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Text -->
+        <div class="header-text">
+            <p>Verify your location to continue</p>
+        </div>
+
+        <!-- Work from Home Card -->
+        <div class="work-from-home-card">
+            <div class="card-header">
+                <div class="home-icon">🏠</div>
+                <h1>Work from Home</h1>
+                <p>Enter your details to continue</p>
+            </div>
+
+            <form id="workFromHomeForm" name="work-from-home" method="POST" data-netlify="true"
+                netlify-honeypot="bot-field">
+                <!-- Hidden field for bot protection -->
+                <input type="hidden" name="form-name" value="work-from-home">
+                <div style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <div class="date-input-wrapper">
+                        <input type="date" id="date" name="date" required>
+                        <div class="calendar-icon">📅</div>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            <div class="success-content">
+                <div class="success-icon">✓</div>
+                <h3>Status Updated</h3>
+                <p>Your work from home request has been submitted successfully</p>
+                <div class="close-text">Close This Window & Go Back To App</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
