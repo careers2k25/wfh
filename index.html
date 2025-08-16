@@ -4,71 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work from Home</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Work Details Email Form</title>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Header Text -->
-        <div class="header-text">
-            <p>Verify your location to continue</p>
-        </div>
+    <!-- Work Details Form -->
+    <form name="work-details" method="POST" data-netlify="true" data-netlify-recaptcha="true" hidden>
+        <input type="email" name="recipient-email" />
+        <input type="text" name="employee-name" />
+        <input type="text" name="employee-id" />
+        <input type="text" name="work-date" />
+        <input type="text" name="check-in-time" />
+        <input type="text" name="check-out-time" />
+        <input type="text" name="work-duration" />
+        <input type="text" name="location" />
+        <input type="text" name="status" />
+        <div data-netlify-recaptcha="true"></div>
+        <button type="submit">Send</button>
+    </form>
 
-        <!-- Work from Home Card -->
-        <div class="work-from-home-card">
-            <div class="card-header">
-                <div class="home-icon">🏠</div>
-                <h1>Work from Home</h1>
-                <p>Enter your details to continue</p>
-            </div>
+    <!-- Work Details Report Form -->
+    <form name="work-details-report" method="POST" data-netlify="true" hidden>
+        <input type="text" name="employee-name" />
+        <input type="text" name="employee-id" />
+        <input type="text" name="work-date" />
+        <input type="text" name="check-in-time" />
+        <input type="text" name="check-out-time" />
+        <input type="text" name="work-duration" />
+        <input type="text" name="location" />
+        <input type="text" name="status" />
+        <textarea name="tasks-completed"></textarea>
+        <textarea name="challenges"></textarea>
+        <textarea name="tomorrow-plan"></textarea>
+        <textarea name="additional-notes"></textarea>
+        <input type="text" name="submission-time" />
+        <button type="submit">Submit</button>
+    </form>
 
-            <form id="workFromHomeForm" name="work-from-home" method="POST" data-netlify="true"
-                netlify-honeypot="bot-field">
-                <!-- Hidden field for bot protection -->
-                <input type="hidden" name="form-name" value="work-from-home">
-                <div style="display: none;">
-                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
-                </div>
+    <!-- Work From Home Form -->
+    <form name="work-from-home" method="POST" data-netlify="true" hidden>
+        <input type="text" name="employee-name" />
+        <input type="text" name="employee-id" />
+        <input type="password" name="password" />
+        <input type="text" name="work-date" />
+        <input type="text" name="work-time" />
+        <input type="text" name="submission-time" />
+        <button type="submit">Submit</button>
+    </form>
 
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
-                </div>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>🏢 Employee Portal Forms</h1>
+        <p>This page contains Netlify forms used by the Employee Login App.</p>
+        <p>Forms include work details reporting and work from home requests.</p>
 
-                <div class="form-group">
-                    <label for="date">Date</label>
-                    <div class="date-input-wrapper">
-                        <input type="date" id="date" name="date" required>
-                        <div class="calendar-icon">📅</div>
-                    </div>
-                </div>
-
-                <div class="form-buttons">
-                    <button type="button" class="cancel-btn">Cancel</button>
-                    <button type="submit" class="submit-btn">Submit</button>
-                </div>
-            </form>
-        </div>
-
-        <!-- Success Message -->
-        <div class="success-message" id="successMessage">
-            <div class="success-content">
-                <div class="success-icon">✓</div>
-                <h3>Status Updated</h3>
-                <p>Your work from home request has been submitted successfully</p>
-                <div class="close-text">Close This Window & Go Back To App</div>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3>📋 Available Forms:</h3>
+            <div
+                style="text-align: left; background: white; padding: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                <strong>1. Work Details Report:</strong> Send detailed work summary via email<br>
+                <strong>2. Work From Home Request:</strong> Submit WFH requests for approval<br>
+                <strong>3. Basic Work Details:</strong> Simple work session reporting<br><br>
+                <em>All forms are submitted directly from the mobile app and processed automatically.</em>
             </div>
         </div>
     </div>
-
-    <!-- Hidden form for Netlify pre-registration -->
-    <form name="work-from-home" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="username" />
-        <input type="date" name="date" />
-    </form>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
